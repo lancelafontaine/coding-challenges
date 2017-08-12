@@ -4,24 +4,19 @@ fn main() {
     let mut input = String::new();
     read_line(&mut input);
 
-    let mut chars : Vec<char> = input.trim().chars().collect();
-    let mut should_restart = true ;
+    let mut stack: Vec<char> = Vec::new();
 
-    while should_restart {
-        should_restart = false;
-        for index in 0..chars.len() {
-            if index + 1 < chars.len() && chars[index] == chars[index + 1] {
-                chars.remove(index + 1);
-                chars.remove(index);
-                should_restart = true;
-                break;
-            }
+    for char in input.trim().chars() {
+        if stack.last() == Some(&char) {
+            stack.pop();
+        } else {
+            stack.push(char);
         }
     }
-    if chars.is_empty() {
+    let output: String = stack.into_iter().collect();
+    if output == "" {
         println!("Empty String");
     } else {
-        let output: String = chars.into_iter().collect();
         println!("{}", output);
     }
 }
