@@ -1,0 +1,6 @@
+[package]
+name = "intro-to-tutorial-challenges"
+version = "0.1.0"
+authors = ["Lance Lafontaine <lance.lafontaine92@gmail.com>"]
+
+[dependencies]
