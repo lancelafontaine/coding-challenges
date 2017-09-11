@@ -1,0 +1,7 @@
+[package]
+name = "pyramid-sliding"
+version = "0.1.0"
+authors = ["Lance Lafontaine <lance.lafontaine92@gmail.com>"]
+
+[dependencies]
+time = "0.1"
