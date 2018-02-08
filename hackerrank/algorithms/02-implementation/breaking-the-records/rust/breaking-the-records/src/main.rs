@@ -11,7 +11,6 @@ fn main() {
 
     let mut point_line = String::new();
     read_line(&mut point_line);
-    point_line.pop();
 
     for score in point_line.split(" ") {
         let int_score: usize = score.parse().unwrap();
