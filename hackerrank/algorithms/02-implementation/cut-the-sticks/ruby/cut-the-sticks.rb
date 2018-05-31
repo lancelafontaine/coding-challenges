@@ -4,10 +4,9 @@ require 'json'
 require 'stringio'
 
 def cut_the_sticks(arr)
-  p arr.length
-  smallest_stick = arr.min
+  puts arr.length
   new_arr = arr
-    .map { |stick| stick - smallest_stick }
+    .map { |stick| stick - arr.min }
     .reject { |stick| stick <= 0 }
   cut_the_sticks(new_arr) unless new_arr.length < 1
 end
