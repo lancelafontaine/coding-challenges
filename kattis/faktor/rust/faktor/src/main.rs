@@ -8,11 +8,7 @@ fn main() -> Result<()> {
     let stdin_handle = stdin.lock();
     let mut stdout_handle = stdout.lock();
 
-    let input = stdin_handle
-        .lines()
-        .take(1)
-        .filter_map(std::result::Result::ok)
-        .collect::<String>();
+    let input = stdin_handle.lines().next().unwrap()?;
     let split_input = input
         .split_whitespace()
         .map(String::from)
