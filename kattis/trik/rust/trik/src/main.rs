@@ -8,14 +8,10 @@ fn main() -> Result<()> {
     let stdin_handle = stdin.lock();
     let mut stdout_handle = stdout.lock();
 
-    // 110
-    const A_OPERATION: u8 = 6;
-    // 011
-    const B_OPERATION: u8 = 3;
-    // 101
-    const C_OPERATION: u8 = 5;
-    // 100
-    let mut ball_position: u8 = 4;
+    const A_OPERATION: u8 = 0b110;
+    const B_OPERATION: u8 = 0b011;
+    const C_OPERATION: u8 = 0b101;
+    let mut ball_position: u8 = 0b100;
 
     let input = stdin_handle.lines().next().unwrap()?;
 
@@ -26,8 +22,7 @@ fn main() -> Result<()> {
             'C' => ball_position ^= C_OPERATION,
             _ => panic!(),
         }
-        // 111
-        if ball_position != 7 {
+        if ball_position != 0b111 {
             continue;
         }
         match c {
@@ -39,12 +34,9 @@ fn main() -> Result<()> {
     }
 
     let output = match ball_position {
-        // 100
-        4 => "1",
-        // 010
-        2 => "2",
-        // 001
-        1 => "3",
+        0b100 => "1",
+        0b010 => "2",
+        0b001 => "3",
         _ => panic!(),
     };
 
