@@ -13,7 +13,7 @@ fn main() -> Result<()> {
         .filter_map(std::result::Result::ok)
         .map(|s| s.parse::<u64>())
         .filter_map(std::result::Result::ok)
-        .map(|u| fuel_by_mass(u))
+        .map(fuel_by_mass)
         .sum();
 
     writeln!(stdout_handle, "{}", fuel_total)?;
